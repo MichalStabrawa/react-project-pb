@@ -10,11 +10,17 @@ const ProductList = (props) => {
                           return (
                               <li
                                   key={index}
+                                  name={el.nazwa}
+                                  category={el.kategoria}
                                   onClick={() =>
-                                      props.handleNameChange(el.brand)
+                                      props.handleNameChange(
+                                          el.nazwa,
+                                          el.kategoria,
+                                          Math.random().toString(16).slice(2)
+                                      )
                                   }
                               >
-                                  {el.brand}
+                                  {el.nazwa}
                               </li>
                           );
                       })

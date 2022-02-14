@@ -6,9 +6,11 @@ const Header = () => {
         <header className="header-main">
             <nav className="navbar navbar-light bg-primary">
                 <div className="container-fluid">
-                    <span className="navbar-text">
-                        Navbar text with an inline element
-                    </span>
+                    <div className="row">
+                        <div className="col">
+                            <h1>ShoppingApp</h1>
+                        </div>
+                    </div>
                 </div>
             </nav>
         </header>

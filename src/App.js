@@ -13,12 +13,16 @@ function App() {
     const [state, setState] = useState(dataGet);
     const [names, setName] = useState([]);
 
-    const addListProduct = (name) => {
-        setName([...names, { value: name }]);
+    const addListProduct = (name, category, index) => {
+        setName([...names, { nazwa: name, kategoria: category, id: index }]);
     };
-    useEffect(() => {
-        setName(names);
-    });
+
+    const deleteTodo = (id) => {
+        const x = names.filter((todo) => todo.id !== id);
+        setName(x);
+        console.log(id);
+    };
+
     return (
         <div className="App">
             <Header />
@@ -28,8 +32,8 @@ function App() {
                         <Card className="card-product" title={"Product List"}>
                             <ProductList
                                 dataProps={state}
-                                handleNameChange={(name) =>
-                                    addListProduct(name)
+                                handleNameChange={(name, category, index) =>
+                                    addListProduct(name, category, index)
                                 }
                             ></ProductList>
                         </Card>
@@ -38,7 +42,8 @@ function App() {
                         <Card>
                             <ShopingList
                                 products={names}
-                                title={"Lista props"}
+                                title={"Shoping list"}
+                                handleNameChanges={(id) => deleteTodo(id)}
                             ></ShopingList>
                         </Card>
                     </div>
