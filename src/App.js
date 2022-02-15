@@ -5,6 +5,7 @@ import Card from "../src/components/Ui/Card";
 import Header from "../src/components/Header/Header";
 import ProductList from "../src/components/ProductList/ProductList";
 import ShopingList from "./components/Header/ShopingList/ShopingList";
+import FilterComponent from "./components/Filter/FilterComponent";
 
 import data from "../src/common/data";
 
@@ -12,6 +13,10 @@ function App() {
     const dataGet = data;
     const [state, setState] = useState(dataGet);
     const [names, setName] = useState([]);
+
+    const uniq = state
+        .map((item) => item.kategoria)
+        .filter((value, index, self) => self.indexOf(value) === index);
 
     const addListProduct = (name, category, index) => {
         setName([...names, { nazwa: name, kategoria: category, id: index }]);
@@ -26,6 +31,7 @@ function App() {
     return (
         <div className="App">
             <Header />
+            <FilterComponent products={uniq} />
             <div className="container-fluid">
                 <div className="row">
                     <div className="col">

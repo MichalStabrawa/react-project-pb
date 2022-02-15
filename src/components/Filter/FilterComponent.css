@@ -1,0 +1,14 @@
+.filter {
+    margin-bottom: 25px;
+    ;
+}
+
+.filter .col {
+    display: flex;
+    align-items: center;
+}
+
+.filter .form-label {
+    margin-right: 20px;
+    margin-bottom: 0
+}
