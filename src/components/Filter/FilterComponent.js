@@ -2,16 +2,8 @@ import { React, useState, useEffect } from "react";
 import "./FilterComponent.css";
 
 const FilterComponent = (props) => {
-    const {
-        products,
-        handleFilterInput,
-        handleFilterCategory,
-        handleFIlterReset,
-    } = props;
-
-    const resetFilter = (element, callback) => {
-        callback(element);
-    };
+    const { products, handleFilterInput, handleFilterCategory, resetFilter } =
+        props;
 
     return (
         <div className="container-fluid filter">
@@ -36,6 +28,7 @@ const FilterComponent = (props) => {
                         defaultValue={{ label: "Select Dept", value: "" }}
                         onChange={(e) => handleFilterCategory(e)}
                     >
+                        <option></option>
                         {products.map((el, index) => (
                             <option key={index} value={el}>
                                 {el}
@@ -47,11 +40,9 @@ const FilterComponent = (props) => {
                     <button
                         type="submit"
                         className="btn btn-primary"
-                        onChange={() => {
-                            handleFIlterReset();
-                        }}
+                        onClick={(e) => resetFilter(e)}
                     >
-                        Search
+                        Clean filter
                     </button>
                 </div>
             </div>

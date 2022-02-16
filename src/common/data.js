@@ -19,6 +19,21 @@ const vehicles = [
         kategoria: "chemia",
         produktSpozywczy: false,
     },
+    {
+        nazwa: "miód",
+        kategoria: "inne",
+        produktSpozywczy: true,
+    },
+    {
+        nazwa: "szampon",
+        kategoria: "chemia",
+        produktSpozywczy: false,
+    },
+    {
+        nazwa: "cukier",
+        kategoria: "inne",
+        produktSpozywczy: true,
+    },
 ];
 
 export default vehicles;

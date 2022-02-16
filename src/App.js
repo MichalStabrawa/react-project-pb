@@ -62,8 +62,8 @@ function App() {
         }
     };
 
-    const resetFilter = () => {
-        console.log("dziala");
+    const resetFilter = (e) => {
+        setState(dataGet);
     };
 
     useEffect(() => {
@@ -78,7 +78,7 @@ function App() {
                 products={uniq}
                 handleFilterInput={(e) => changeHandleName(e)}
                 handleFilterCategory={(e) => changeHandleCategory(e)}
-                handleFIlterReset={() => resetFilter}
+                resetFilter={(e) => resetFilter(e)}
             />
             <div className="container-fluid">
                 <div className="row">
