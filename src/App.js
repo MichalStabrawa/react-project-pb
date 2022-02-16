@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useState, useEffect } from "react";
 import Card from "../src/components/Ui/Card";
@@ -14,6 +13,7 @@ function App() {
     const [state, setState] = useState(dataGet);
     const [names, setName] = useState([]);
 
+    console.log("state", names);
     const uniq = state
         .map((item) => item.kategoria)
         .filter((value, index, self) => self.indexOf(value) === index);
@@ -28,10 +28,58 @@ function App() {
         console.log(id);
     };
 
+    const changeHandleName = (e) => {
+        const keyword = e.target.value;
+
+        if (keyword !== "") {
+            const results = dataGet.filter((user) => {
+                return user.nazwa
+                    .toLowerCase()
+                    .startsWith(keyword.toLowerCase());
+                // Use the toLowerCase() method to make it case-insensitive
+            });
+            setState(results);
+        } else {
+            setState(dataGet);
+            // If the text field is empty, show all users
+        }
+    };
+
+    const changeHandleCategory = (e) => {
+        const keyword = e.target.value;
+
+        if (keyword !== "") {
+            const results = dataGet.filter((user) => {
+                return user.kategoria
+                    .toLowerCase()
+                    .startsWith(keyword.toLowerCase());
+                // Use the toLowerCase() method to make it case-insensitive
+            });
+            setState(results);
+        } else {
+            setState(dataGet);
+            // If the text field is empty, show all users
+        }
+    };
+
+    const resetFilter = () => {
+        console.log("dziala");
+    };
+
+    useEffect(() => {
+        console.log("state useefect", names);
+    });
+
     return (
         <div className="App">
+            {console.log("state render", names)}
             <Header />
-            <FilterComponent products={uniq} />
+            <FilterComponent
+                products={uniq}
+                handleFilterInput={(e) => changeHandleName(e)}
+                handleFilterCategory={(e) => changeHandleCategory(e)}
+                handleFIlterReset={() => resetFilter}
+            />
             <div className="container-fluid">
                 <div className="row">
                     <div className="col">
