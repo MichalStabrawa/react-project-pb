@@ -15,7 +15,9 @@ const FilterComponent = (props) => {
     return (
         <div className="container-fluid filter">
             <div className="row">
-                {}
+                <div className="col-12 filters-item">
+                    <h2 className="filter-title">Filters</h2>
+                </div>
                 <div className="col">
                     <label className="form-label">Name</label>
                     <input

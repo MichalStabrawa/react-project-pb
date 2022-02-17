@@ -1,5 +1,6 @@
 .filter {
     margin-bottom: 25px;
+    padding-bottom: 25px;
     ;
 }
 
@@ -11,4 +12,8 @@
 .filter .form-label {
     margin-right: 20px;
     margin-bottom: 0
+}
+
+.filter-title {
+    text-align: left;
 }

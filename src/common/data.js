@@ -34,6 +34,16 @@ const vehicles = [
         kategoria: "inne",
         produktSpozywczy: true,
     },
+    {
+        nazwa: "sałata",
+        kategoria: "warzywa",
+        produktSpozywczy: true,
+    },
+    {
+        nazwa: "tabletki do zmywarki",
+        kategoria: "chemia",
+        produktSpozywczy: false,
+    },
 ];
 
 export default vehicles;

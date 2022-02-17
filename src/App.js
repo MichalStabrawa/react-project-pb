@@ -95,7 +95,7 @@ function App() {
                 handleChecbox={(e) => handleChecbox(e)}
                 value={checkbox}
             />
-            <div className="container-fluid">
+            <div className="container-fluid main-products bg-light">
                 <div className="row">
                     <div className="col">
                         <Card className="card-product" title={"Product List"}>
