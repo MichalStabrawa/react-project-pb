@@ -12,6 +12,7 @@ function App() {
     const dataGet = data;
     const [state, setState] = useState(dataGet);
     const [names, setName] = useState([]);
+    const [checkbox, setCheckbox] = useState(false);
 
     console.log("state", names);
     const uniq = state
@@ -62,6 +63,18 @@ function App() {
         }
     };
 
+    const handleChecbox = () => {
+        setCheckbox(!checkbox);
+        console.log(checkbox);
+        const x = state.filter((value) => value.produktSpozywczy !== false);
+        if (checkbox === false) {
+            setState(x);
+        } else {
+            console.log(checkbox);
+            setState(dataGet);
+        }
+    };
+
     const resetFilter = (e) => {
         setState(dataGet);
     };
@@ -79,6 +92,8 @@ function App() {
                 handleFilterInput={(e) => changeHandleName(e)}
                 handleFilterCategory={(e) => changeHandleCategory(e)}
                 resetFilter={(e) => resetFilter(e)}
+                handleChecbox={(e) => handleChecbox(e)}
+                value={checkbox}
             />
             <div className="container-fluid">
                 <div className="row">

@@ -2,8 +2,15 @@ import { React, useState, useEffect } from "react";
 import "./FilterComponent.css";
 
 const FilterComponent = (props) => {
-    const { products, handleFilterInput, handleFilterCategory, resetFilter } =
-        props;
+    // const [checkvalue, setCheckValue] = useState(false);
+    const {
+        products,
+        handleFilterInput,
+        handleFilterCategory,
+        resetFilter,
+        handleChecbox,
+        value,
+    } = props;
 
     return (
         <div className="container-fluid filter">
@@ -35,6 +42,20 @@ const FilterComponent = (props) => {
                             </option>
                         ))}
                     </select>
+                </div>
+                <div className="col">
+                    <div className="form-check">
+                        <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value={value}
+                            id="flexCheckDefault"
+                            onChange={() => handleChecbox()}
+                        />
+                        <label className="form-check-label">
+                            Is produkt spozywczy
+                        </label>
+                    </div>
                 </div>
                 <div className="col">
                     <button
