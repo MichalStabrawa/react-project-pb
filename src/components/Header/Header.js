@@ -4,7 +4,7 @@ import "./Header.css";
 const Header = () => {
     return (
         <header className="header-main">
-            <nav className="navbar navbar-light bg-primary">
+            <nav className="navbar navbar-light bg-info">
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col">

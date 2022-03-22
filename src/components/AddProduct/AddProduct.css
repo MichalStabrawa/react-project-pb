@@ -1,19 +1,19 @@
-.filter {
+.add-product {
     margin-bottom: 25px;
     padding-bottom: 25px;
-    background: #fff;
+    background-color: #fff;
 }
 
-.filter .col {
+.add-product .col {
     display: flex;
     align-items: center;
 }
 
-.filter .form-label {
+.add-product .form-label {
     margin-right: 20px;
     margin-bottom: 0;
 }
 
-.filter-title {
+.add-product {
     text-align: left;
 }

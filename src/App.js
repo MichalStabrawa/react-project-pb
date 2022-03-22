@@ -5,6 +5,7 @@ import Header from "../src/components/Header/Header";
 import ProductList from "../src/components/ProductList/ProductList";
 import ShopingList from "./components/Header/ShopingList/ShopingList";
 import FilterComponent from "./components/Filter/FilterComponent";
+import AddProduct from "./components/AddProduct/AddProduct";
 
 import data from "../src/common/data";
 
@@ -87,6 +88,7 @@ function App() {
         <div className="App">
             {console.log("state render", names)}
             <Header />
+            <AddProduct />
             <FilterComponent
                 products={uniq}
                 handleFilterInput={(e) => changeHandleName(e)}
